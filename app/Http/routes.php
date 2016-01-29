@@ -34,9 +34,9 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 //Medication
-    Route::get('/check', 'MedController@getCheck');
-    Route::post('/check-result', 'MedController@postResult');
-    Route::post('/med-taken', 'MedController@postTaken');
+    Route::get('/check', 'MedicationsController@getCheck');
+    Route::post('/med-result', 'MedicationsController@postResult');
+    Route::post('/med-taken', 'MedicationsController@postTaken');
 
 
 //Database connection test
