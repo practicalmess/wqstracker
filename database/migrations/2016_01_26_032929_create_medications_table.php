@@ -18,7 +18,7 @@ class CreateMedicationsTable extends Migration
 
             $table->string('med_name');
             $table->integer('interval');
-            $table->integer('doses_taken');
+            $table->datetime('last_taken');
             
         });
     }
@@ -30,6 +30,6 @@ class CreateMedicationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('books');
+        Schema::drop('medications');
     }
 }

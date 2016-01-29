@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -11,9 +12,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +27,16 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     //
+
+//Main routes
+    Route::get('/', function () {
+    return "Hi Corey!";
+});
+
+//Medication
+    Route::get('/check', 'MedController@getCheck');
+    Route::post('/check-result', 'MedController@postResult');
+    Route::post('/med-taken', 'MedController@postTaken');
 
 
 //Database connection test
