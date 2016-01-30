@@ -28,23 +28,23 @@ class MedicationsTableSeeder extends Seeder
         DB::table('medications')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'med_name' => 'ondansetron',
+            'med_name' => 'ondansetron (nausea)',
             'interval' => 8,
-            'last_taken' => Carbon\Carbon::now()->subHours(2),
+            'last_taken' => Carbon\Carbon::now(),
             ]);
         DB::table('medications')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'med_name' => 'omeprazole',
+            'med_name' => 'omeprazole (esophagus)',
             'interval' => 24,
-            'last_taken' => Carbon\Carbon::now()->subHours(12),
+            'last_taken' => Carbon\Carbon::now(),
             ]);
         DB::table('medications')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'med_name' => 'naproxen',
+            'med_name' => 'naproxen (pain)',
             'interval' => 12,
-            'last_taken' => Carbon\Carbon::now()->subHours(1),
+            'last_taken' => Carbon\Carbon::now(),
             ]);
 
     }
