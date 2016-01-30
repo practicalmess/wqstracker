@@ -20,6 +20,7 @@ class CreateMedicationsTable extends Migration
             $table->integer('interval');
             $table->datetime('last_taken');
             $table->boolean('can_take');
+            $table->datetime('next');
             
         });
     }

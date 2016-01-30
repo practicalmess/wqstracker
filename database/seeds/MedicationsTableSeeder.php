@@ -16,7 +16,7 @@ class MedicationsTableSeeder extends Seeder
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'med_name' => 'ibuprofen',
         	'interval' => 8,
-        	'last_taken' => Carbon\Carbon::now()->subHours(12),
+        	'last_taken' => Carbon\Carbon::now()->subHours(9),
             ]);
         DB::table('medications')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -24,6 +24,13 @@ class MedicationsTableSeeder extends Seeder
         	'med_name' => 'excedrin',
         	'interval' => 6,
         	'last_taken' => Carbon\Carbon::now()->subHours(8),
+            ]);
+        DB::table('medications')->insert([
+            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'med_name' => 'ondansetron',
+            'interval' => 8,
+            'last_taken' => Carbon\Carbon::now()->subHours(8),
             ]);
 
     }

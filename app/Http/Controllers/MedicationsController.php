@@ -16,7 +16,10 @@ class MedicationsController extends Controller {
 			$taken = Carbon::parse($med->last_taken);
 			if ($med->interval < Carbon::now()->diffInHours($taken))
 				$med->can_take = 1;
+			Carbon::setToStringFormat('g:i a');
+			$med->next = $taken->addHours($med->interval);
 		}
+
 
 		return view('med-check')->with('meds', $meds);
 	}

@@ -14,7 +14,7 @@
 				<input type="submit" value="Take!">
 			</form>
 		@else
-			You can't take this now.
+			You can take this at {{$med->next}}.
 		@endif
 		</p>
 	@endforeach
