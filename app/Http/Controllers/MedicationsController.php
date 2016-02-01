@@ -9,6 +9,7 @@ use Carbon\Carbon;
 
 class MedicationsController extends Controller {
 
+	//Corey
 	public function getCheck() {
 		$meds = \WQS\Medication::all();
 
@@ -31,6 +32,37 @@ class MedicationsController extends Controller {
 		$med->save();
 
 		return view('med-taken')->with('med', $med);
+	}
+
+	//Me
+	public function getChange() {
+		$meds = \WQS\Medication::all();
+		return view('change');
+	}
+
+	public function getAdd() {
+		return view('add');
+	}
+
+	public function postChange(Request $request) {
+		$med = new \WQS\Medication();
+		$med->med_name = $request->med_name;
+		$med->interval = $request->interval;
+
+		$med->save();
+		return redirect('/change');
+	}
+
+	public function getDelete() {
+		$meds = \WQS\Medication::all();
+		return view('delete')->with('meds', $meds);
+	}
+
+	public function postDeleted(Request $request) {
+		$med = \WQS\Medication::find($request->id);
+		$med->delete();
+
+		return view('deleted');
 	}
 }
 
