@@ -76,7 +76,7 @@ class MedicationsController extends Controller {
 
 		$med->save();
 
-		return redirect('/change');
+		return view('/changed_taken');
 	}
 }
 
