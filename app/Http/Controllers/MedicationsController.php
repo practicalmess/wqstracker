@@ -64,6 +64,20 @@ class MedicationsController extends Controller {
 
 		return view('deleted');
 	}
+
+	public function getChangeTaken() {
+		$meds = \WQS\Medication::all();
+		return view('change_taken')->with('meds', $meds);
+	}
+
+	public function postChangedTaken(Request $request) {
+		$med = \WQS\Medication::find($request->id);
+		$med->last_taken = Carbon::createFromFormat('g:i a', $request->last_taken);
+
+		$med->save();
+
+		return redirect('/change');
+	}
 }
 
 ?>

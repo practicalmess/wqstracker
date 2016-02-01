@@ -43,6 +43,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/change', 'MedicationsController@postChange');
     Route::get('/delete', 'MedicationsController@getDelete');
     Route::post('/deleted', 'MedicationsController@postDeleted');
+    Route::get('/change_taken', 'MedicationsController@getChangeTaken');
+    Route::post('/changed_taken', 'MedicationsController@postChangedTaken');
 
 
 //Database connection test
