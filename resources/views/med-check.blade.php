@@ -27,6 +27,6 @@
 		</p>
 	@endforeach
 	
-	<img class="footer" src="/images/puppy1.jpg" alt="A corgi puppy">
+	<img class="footer" src="/images/puppy2.jpg" alt="A puppy nomming a kitten">
 
 @stop
